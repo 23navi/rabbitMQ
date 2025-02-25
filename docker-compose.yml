@@ -1,0 +1,17 @@
+services:
+  rabbitmq:
+    container_name: my-test-rabbitmq
+    # This rabbitmq image provides both MQ and management console
+    image: rabbitmq:3.13-rc-management-alpine
+    restart: always
+    environment:
+      - RABBITMQ_DEFAULT_USER=navi
+      - RABBITMQ_DEFAULT_PASS=navi1234
+    ports:
+      # AMQP protocol port
+      - "5672:5672"
+      # Management UI
+      - "15672:15672"
+      ## We are not going to have store for rabbitMQ
+
+networks: {}
