@@ -12,6 +12,8 @@ services:
       - "5672:5672"
       # Management UI
       - "15672:15672"
+      # Prometheus metric (we need to enable this rabbit MQ plugin)
+      - "15692:15692" 
       ## We are not going to have store for rabbitMQ
 
 networks: {}
